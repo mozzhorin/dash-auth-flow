@@ -36,7 +36,7 @@ def layout():
                 html.H3('Change Password'),
                 dcc.Location(id='change-url',refresh=True),
                 html.Div(id='change-trigger',style=dict(display='none')),
-                dbc.FormGroup(
+                dbc.Form(
                     [
                         html.Div(id='change-alert'),
                         html.Br(),

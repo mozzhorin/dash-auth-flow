@@ -40,7 +40,7 @@ def layout():
                 dcc.Location(id='register-url',refresh=True,),
                 html.Div(id='register-trigger',style=dict(display='none')),
                 html.Div(id='register-alert'),
-                dbc.FormGroup(
+                dbc.Form(
                     [
                         dbc.Input(id='register-first',autoFocus=True),
                         dbc.FormText('First'),

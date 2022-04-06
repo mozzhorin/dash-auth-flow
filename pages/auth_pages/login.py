@@ -35,7 +35,7 @@ def layout():
                 dcc.Location(id='login-url',refresh=True,pathname='/login'),
                 html.Div(id='login-trigger',style=dict(display='none')),
                 html.Div(id='login-alert'),
-                dbc.FormGroup(
+                dbc.Form(
                     [
                         dbc.Alert('Try test@test.com / test', color='info',dismissable=True),
                         html.Br(),

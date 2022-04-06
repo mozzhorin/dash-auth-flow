@@ -39,7 +39,7 @@ def layout():
                 html.Div(id='profile-login-trigger',style=dict(display='none')),
                 html.Br(),
 
-                dbc.FormGroup(
+                dbc.Form(
                     [
                         # First, first input, and formtext
                         dbc.Label('First:',id='profile-first'),
