@@ -8,6 +8,8 @@ from flask import redirect
 from server import app, server
 from flask_login import logout_user, current_user
 
+import argparse
+
 # app pages
 from pages import (
     home,
@@ -130,4 +132,13 @@ def user_logout(input1):
         return 'Login', '/login'
 
 if __name__ == '__main__':
-    app.run_server(debug=False)
+    parser = argparse.ArgumentParser(description='ml-tools@entitys')
+    parser.add_argument('--port', type=int, default=80, help='Port')
+    parser.add_argument('--host', type=str, default='0.0.0.0', help='Host')
+    parser.add_argument('--debug', type=int, default=0, help='Debug mode')
+    args = parser.parse_args()
+    
+    #app.title = 'ml-tools@entitys' 
+    app.config.suppress_callback_exceptions = True
+    app.config.prevent_initial_callbacks=True
+    app.run_server(port=args.port, host=args.host, debug=args.debug)
