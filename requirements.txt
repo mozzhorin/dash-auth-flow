@@ -27,3 +27,4 @@ SQLAlchemy
 urllib3
 validate-email
 Werkzeug
+gunicorn
