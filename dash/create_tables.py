@@ -1,5 +1,5 @@
-from utilities.config import engine
-from utilities.auth import (
+from authutils.config import engine
+from authutils.auth import (
     User,
     PasswordChange,
     add_user,
@@ -18,24 +18,25 @@ def create_user_table(model,engine):
 def create_password_change_table(model,engine):
     model.metadata.create_all(engine)
 
+if __name__ == '__main__':
+    # create the tables
+    create_user_table(User,engine)
+    create_password_change_table(PasswordChange,engine)
 
-# create the tables
-create_user_table(User,engine)
-create_password_change_table(PasswordChange,engine)
+    # add a test user to the database
+    first = 'test'
+    last = 'test'
+    company = 'Test Inc.'
+    email = 'test@test.com'
+    password = 'test'
+    admin = True
 
+    add_user(first,last,company,password,email,admin,engine)
 
-# add a test user to the database
-first = 'test'
-last = 'test'
-email = 'test@test.com'
-password = 'test'
-add_user(first,last,password,email,engine)
+    # show that the users exists
+    show_users(engine)
 
-
-# show that the users exists
-show_users(engine)
-
-# confirm that user exists
-print(user_exists(email,engine))
+    # confirm that user exists
+    print(user_exists(email,engine))
 
 
