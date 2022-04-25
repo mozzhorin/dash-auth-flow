@@ -1,1 +1,1 @@
-web: gunicorn dash.app:appserver
+web: gunicorn --pythonpath dash app:appserver
