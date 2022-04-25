@@ -1,5 +1,5 @@
-from authutils.config import engine
-from authutils.auth import (
+from utilities.config import engine
+from utilities.auth import (
     User,
     PasswordChange,
     add_user,
