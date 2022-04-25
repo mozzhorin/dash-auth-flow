@@ -5,7 +5,8 @@ import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output, State
 
 from flask import redirect
-from server import app, server
+from server import app
+from server import server as appserver
 from flask_login import logout_user, current_user
 
 import argparse, os
