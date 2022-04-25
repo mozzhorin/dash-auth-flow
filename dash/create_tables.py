@@ -31,7 +31,7 @@ if __name__ == '__main__':
     password = 'test'
     admin = True
 
-    add_user(first,last,company,password,email,admin,engine)
+    add_user(first,last,password,email,engine)
 
     # show that the users exists
     show_users(engine)
