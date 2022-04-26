@@ -7,7 +7,7 @@ updateReqs
 .vscode
 env
 venv
-*users.db*
+#*users.db*
 testbench
 bkpMySQL
 run_gunicorn
@@ -40,9 +40,9 @@ push_to_server
 # Logs and databases #
 ######################
 *.log
-*.sql
-*.sqlite
-*.db
+#*.sql
+#*.sqlite
+#*.db
 
 # OS generated files #
 ######################
